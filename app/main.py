@@ -19,7 +19,16 @@ app.include_router(tenant_recommend_router)
 def startup_event():
     init_pg_pool()
     print("PostgreSQL pool initialized")
+from shared.infrastructure.config.settings import load_settings
+from fastapi import FastAPI
+from app.api.routes.tenant import router as tenant_router
+app = FastAPI(
+    title="Zero-To-Two AI Server",
+    description="AI 기반 부동산 매칭 시스템 서버",
+    version="0.1.0"
+)
 
+app.include_router(tenant_router)
 
 def bootstrap():
     settings = Settings()
