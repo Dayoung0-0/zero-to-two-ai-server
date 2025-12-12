@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Sequence
 
-from modules.real_estate.application.dto.chatbot_search_dto import (
+from modules.real_estate.application.dto.chatbot_dto import (
     ChatbotSearchCommand,
     ChatbotSearchListing,
     ChatbotSearchResult,
@@ -16,7 +16,6 @@ from modules.real_estate.application.port_out.real_estate_vector_search_port imp
     RealEstateVectorSearchPort,
     VectorSearchHit,
 )
-
 
 class ChatbotSearchService(ChatbotSearchPort):
     """자연어 메시지를 임베딩 검색으로 연결하는 유스케이스."""
