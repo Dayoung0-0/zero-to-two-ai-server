@@ -9,7 +9,7 @@ pytest.importorskip("fastapi")
 from fastapi.testclient import TestClient
 
 from app import main
-import app.routes.llm as llm_route
+import app.api.routes.tenant as llm_route
 from infrastructure.llm.clients import openai_client
 
 
