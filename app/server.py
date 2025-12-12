@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from modules.auth.adapter.input.web.auth_router import router as auth_router
 from modules.tenant.adapter.input.web.tenant_request_router import router as tenant_request_router
 import os
+from dotenv import load_dotenv
 
 # FastAPI 앱 생성
 app = FastAPI(
@@ -11,6 +12,9 @@ app = FastAPI(
     description="Google OAuth + JWT 인증 시스템",
     version="1.0.0"
 )
+
+# .env 로드 (로컬 개발 시 환경변수 자동 적용)
+load_dotenv()
 
 # CORS 설정 (프론트엔드와 통신)
 app.add_middleware(
@@ -46,6 +50,6 @@ if __name__ == "__main__":
     uvicorn.run(
         "app.server:app",
         host="0.0.0.0",
-        port=8000,
+        port=33333,
         reload=True  # 개발 모드: 코드 변경 시 자동 재시작
     )
