@@ -71,7 +71,6 @@ class ChatbotSearchService(ChatbotSearchPort):
             enriched.append(
                 ChatbotSearchListing(
                     id=hit.real_estate_list_id,
-                    # TODO: 유사 매물 응답값 상세 수정 필요
                     title=getattr(estate, "title", None),
                     address=getattr(estate, "address", None),
                     deal=getattr(estate, "deal", None),
